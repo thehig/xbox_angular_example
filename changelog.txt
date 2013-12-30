@@ -1,0 +1,3 @@
+Extend the Profile controller
+* When a gamertag is added to the tabs, push an object to the array, async call the Xbox API.
+* When promise returned push object as profile to that object in the array
