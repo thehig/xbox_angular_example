@@ -1,0 +1,26 @@
+{
+  "name": "Xbox Angular Example",
+  "version": "0.0.1",
+  "authors": [
+    "Scott O'Malley <scottyomalley@gmail.com>"
+  ],
+  "description": "An example of using AngularJS for Dave",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/scripts/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "underscore": null,
+    "requirejs": null,
+    "angular-bootstrap": null,
+    "angular": null,
+    "angular-route": null
+  }
+}

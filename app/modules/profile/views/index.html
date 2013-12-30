@@ -1,0 +1,15 @@
+<div class="container">
+	<form name="gamerTagForm" ng-submit="addProfile(name)" role="form">
+		<input type="text" placeholder="Enter  a Gamertag" ng-model="name" required class="form-control">		
+
+	</form>
+	<br/>
+	<tabset justified="true">
+		<tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="tab.active" disabled="tab.disabled">
+			<br/>
+			{{tab.content}}
+		</tab>
+	</tabset>
+
+<br/>
+</div>
