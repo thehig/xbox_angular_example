@@ -11,6 +11,7 @@ TODO:
 		* Completed 
 			- Added a <i> to the <tab-headen> to show a transfer icon
 			- Made the class conditional based on tab.pulling
+	* Add a directive that can accept a object and map it to a html Partial/View 
 
 
 
