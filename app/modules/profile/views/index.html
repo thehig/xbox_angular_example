@@ -5,7 +5,7 @@
 	</form>
 	<br/>
 	<tabset justified="true">
-		<tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="tab.active" disabled="tab.disabled">
+		<tab ng-repeat="tab in getTabs()" heading="{{tab.name}}" active="tab.active" disabled="tab.disabled">
 			<br/>
 			{{tab.content}}
 		</tab>
