@@ -8,3 +8,9 @@ Extend the Profile controller
 TODO:
 	* Find a better way to do the object merging so that it can be done inline
 	* Add a refreshing icon to the tab while the promise is fulfilling
+		* Completed 
+			- Added a <i> to the <tab-headen> to show a transfer icon
+			- Made the class conditional based on tab.pulling
+
+
+
