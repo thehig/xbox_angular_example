@@ -5,17 +5,33 @@ angular.module('profileApp', [])
 	$scope.tabs=[];
 
 	$scope.addProfile = function(name){
-	
+		$scope.name= "";
+
+		$scope.tabs.push({"name": name, "pulling":true});
+
 		$http.get('https://xboxapi.com/profile/'+name).success(function(data) 
 		{
-			console.log(name)
-			$scope.pushProfile({"name": name, "profile":data, "success": true, "message":"The call returned sucessfully"});
+			
+			tempProfile = _.find($scope.tabs, function(data)
+			{
+				return data.name == name; 
+			});
+
+
+			//TODO: find better way of doing this
+			tempProfile["profile"]=data;
+			tempProfile.pulling = false ;
 		})
-		.failure(function(data)
+		.error(function(data)
 		{
-			$scope.pushProfile({"name": name, "success": false, "message":"The call didn't return sucessfully"});		
+			//_.findWhere($scope.tabs, {"name": name}).push("success": false, "message":"The call returned sucessfully", "pulling": false});	
 		});
 
+		
+	}
+
+	$scope.resetForm = function()
+	{
 		$scope.name = "";
 	}
 

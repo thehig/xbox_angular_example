@@ -1,3 +1,10 @@
 Extend the Profile controller
 * When a gamertag is added to the tabs, push an object to the array, async call the Xbox API.
+	* Completed. Issue encountered with Batarang not updating when the http get completed. Clicking on the banner has an empty ng-click event to force batarang to update.
 * When promise returned push object as profile to that object in the array
+	* Completed. Issues with the binding to the collection arose from being bound directly onto the tabs collection. Changing this to a function that returned said collection meant that the binding model updated correctly.
+	* An example of both $http.get() success and error is given, however the API in question almost always returns successfully with its own success parameter inline, so the error is untested at this time.
+	* Changed the order of operations so that an element is added to the collection before the promise executes. This means we can show an entry of the name with a refreshing symbol and thus notify the user that somethings happening.
+TODO:
+	* Find a better way to do the object merging so that it can be done inline
+	* Add a refreshing icon to the tab while the promise is fulfilling
