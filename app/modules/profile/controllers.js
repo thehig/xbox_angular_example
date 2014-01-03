@@ -4,10 +4,13 @@ angular.module('profileApp', [])
 	
 	$scope.tabs=[];
 
+	
 	$scope.addProfile = function(name){
 		$scope.name= "";
 
-		$scope.tabs.push({"name": name, "pulling":true});
+
+
+		$scope.tabs.push({"name": name, "pulling":true, "profile":{} });
 
 		$http.get('https://xboxapi.com/profile/'+name).success(function(data) 
 		{
@@ -19,8 +22,8 @@ angular.module('profileApp', [])
 
 
 			//TODO: find better way of doing this
-			tempProfile["profile"]=data;
-			tempProfile.pulling = false ;
+			tempProfile.profile = data;
+			tempProfile.pulling = false;
 		})
 		.error(function(data)
 		{
