@@ -8,7 +8,9 @@ angular.module('profileApp', [])
 	$scope.addProfile = function(name){
 		$scope.name= "";
 
-
+		$scope.removeTab = function (index) {
+   			 $scope.tabs.splice(index, 1);
+		};
 
 		$scope.tabs.push({"name": name, "pulling":true, "profile":{} });
 
