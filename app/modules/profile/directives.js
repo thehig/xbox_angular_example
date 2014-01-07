@@ -3,8 +3,8 @@
 angular.module('profileApp')
 	.directive('myCustomer', [function () {
 		return {
-			restrict: 'AE',
-			template: '{{tab.profile | json}}'
+			restrict: 'E',
+			templateUrl: 'app/modules/profile/views/profile.html'
 			
 		};
 	}])
