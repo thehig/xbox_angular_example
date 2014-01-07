@@ -1,3 +1,7 @@
+##7-1-14
+Added the profile.html file in place of the in-line directive
+Renamed customer to gamer-profile
+
 Extend the Profile controller
 * When a gamertag is added to the tabs, push an object to the array, async call the Xbox API.
 	* Completed. Issue encountered with Batarang not updating when the http get completed. Clicking on the banner has an empty ng-click event to force batarang to update.
@@ -11,7 +15,6 @@ TODO:
 		* Completed 
 			- Added a <i> to the <tab-headen> to show a transfer icon
 			- Made the class conditional based on tab.pulling
-	* Add a directive that can accept a object and map it to a html Partial/View 
 
 
 
