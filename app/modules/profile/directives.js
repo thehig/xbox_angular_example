@@ -4,7 +4,10 @@ angular.module('profileApp')
 	.directive('gamerProfile', [function () {
 		return {
 			restrict: 'E',
-			templateUrl: 'app/modules/profile/views/profile.html'
-			
+			templateUrl: 'app/modules/profile/views/profile.html',
+			scope:{
+                gamertag:"=",
+                pulling:"="
+            }
 		};
 	}])
