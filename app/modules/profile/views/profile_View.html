@@ -1,8 +1,10 @@
 <div class="container">
-    This is a profile for {{profile.Player.Gamertag}}<br/>
-    Player: <player-view player="profile.Player"></player-view> <br/>
-    <div ng-repeat="game in profile.RecentGames">
-        Game: <game-view game="game"></game-view>
-    </div>
+    <player-view player="profile.Player"></player-view> <br/>
+
+    <ul class="list-inline">
+        <li ng-repeat="game in profile.RecentGames">
+            <game-view game="game"></game-view>
+        </li>
+    </ul>
 
 </div>
