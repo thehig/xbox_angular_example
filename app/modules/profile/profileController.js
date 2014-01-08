@@ -8,6 +8,7 @@ xboxAppStuff.directives = {}
 
 xboxAppStuff.controllers.profileCtrl = function($scope)
 {
+
     $scope.dummyData =
     {
         "Success": true,
@@ -134,16 +135,21 @@ xboxAppStuff.controllers.profileCtrl = function($scope)
             }
         }
     }
+
+
+    $scope.getDummyProfile = function()
+    {
+        return $scope.dummyData;
+    }
 }
 
 xboxAppStuff.directives.gamerProfile = function()
 {
     return {
-        restrict: 'E',
-        templateUrl: 'app/modules/profile/views/profile.html',
+        restrict: 'EA',
+        templateUrl: 'app/modules/profile/views/profile_directive.html',
         scope:{
-            gamertag:"=",
-            pulling:"="
+            profile:"="
         }
     }
 }
@@ -151,16 +157,22 @@ xboxAppStuff.directives.gamerProfile = function()
 xboxAppStuff.directives.playerView = function()
 {
     return {
-        restrict: 'E',
-        templateUrl: 'app/modules/profile/views/player.html'
+        restrict: 'EA',
+        templateUrl: 'app/modules/profile/views/player_directive.html',
+        scope:{
+            player:"="
+        }
     };
 }
 
 xboxAppStuff.directives.gameView = function()
 {
     return {
-        restrict: 'E',
-        templateUrl: 'app/modules/profile/views/game.html'
+        restrict: 'EA',
+        templateUrl: 'app/modules/profile/views/game_directive.html',
+        scope:{
+            game:"="
+        }
     };
 }
 
