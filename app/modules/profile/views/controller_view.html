@@ -1,0 +1,14 @@
+<div class="container">
+    <h2 ng-click="">Enter a gamertag to see their latest game</h2>
+    <i class="icon-search"></i>
+
+    <div class="input-group" ng-submit="addProfile(gamertag)" role="form">
+        <input type="text" class="form-control" placeholder="Enter a Gamertag">
+        <span class="input-group-btn">
+            <Button class="btn btn-success">Go</Button>
+        </span>
+    </div>
+
+    This is the controller for player: {{dummyData.Player.Gamertag | json}}
+    <profile-view profile="dummyData"></profile-view>
+</div>

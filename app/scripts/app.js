@@ -8,7 +8,7 @@ angular.module('mainApp', [
 	{
 		$routeProvider.
 		when('/', {
-			templateUrl: 'app/modules/profile/views/controller.html',
+			templateUrl: 'app/modules/profile/views/controller_view.html',
 			controller: 'profileCtrl'
 		}).
 		otherwise({
