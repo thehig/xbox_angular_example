@@ -2,9 +2,12 @@
   "name": "Xbox Angular Example",
   "version": "0.0.1",
   "authors": [
-    "Scott O'Malley <scottyomalley@gmail.com>"
+    "Scott O'Malley <scottyomalley@gmail.com>",
+      "David Higgins <thehig@gmail.com>",
+      "Ben Murphy <ben@vonbismark.com",
+      "Mick Healy <mick@vonbismark.com>"
   ],
-  "description": "An example of using AngularJS for Dave",
+  "description": "An example of using AngularJS to call a Web API and represent the result",
   "license": "MIT",
   "private": true,
   "ignore": [
