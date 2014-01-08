@@ -143,11 +143,11 @@ xboxAppStuff.controllers.profileCtrl = function($scope)
     }
 }
 
-xboxAppStuff.directives.gamerProfile = function()
+xboxAppStuff.directives.profileView = function()
 {
     return {
         restrict: 'EA',
-        templateUrl: 'app/modules/profile/views/profile_directive.html',
+        templateUrl: 'app/modules/profile/views/profile_view.html',
         scope:{
             profile:"="
         }
@@ -158,7 +158,7 @@ xboxAppStuff.directives.playerView = function()
 {
     return {
         restrict: 'EA',
-        templateUrl: 'app/modules/profile/views/player_directive.html',
+        templateUrl: 'app/modules/profile/views/player_view.html',
         scope:{
             player:"="
         }
@@ -169,7 +169,7 @@ xboxAppStuff.directives.gameView = function()
 {
     return {
         restrict: 'EA',
-        templateUrl: 'app/modules/profile/views/game_directive.html',
+        templateUrl: 'app/modules/profile/views/game_view.html',
         scope:{
             game:"="
         }
