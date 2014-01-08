@@ -1,14 +1,35 @@
 <div class="container">
-    <h2 ng-click="">Enter a gamertag to see their latest game</h2>
+    <h2 ng-click="">Enter a gamertag to view a profile</h2>
     <i class="icon-search"></i>
 
-    <div class="input-group" ng-submit="addProfile(gamertag)" role="form">
-        <input type="text" class="form-control" placeholder="Enter a Gamertag">
-        <span class="input-group-btn">
-            <Button class="btn btn-success">Go</Button>
-        </span>
-    </div>
+    <form name="gamerTagForm" class="form-horizontal form-inline" ng-submit="addProfile(gamertag)" role="form">
 
-    <!-- This is the controller for player: {{dummyData.Player.Gamertag | json}} -->
-    <profile-view profile="dummyData"></profile-view>
+        <input type="text" placeholder="Enter a Gamertag" ng-model="gamertag" required class="form-control">
+
+    </form>
+
+    <tabset justified="true">
+        <tab ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled">
+            <tab-heading>
+                <i ng-class="{'glyphicon glyphicon-transfer': tab.pulling}"></i>
+                {{tab.gamertag}}
+                <a ng-click="removeTab($index)" href=''><i class="glyphicon glyphicon-remove-circle"></i></a>
+            </tab-heading>
+            <br/>
+
+            <div class="row">
+
+                <div class="col-sx-6 .col-md-offset-3" ng-show="tab.pulling">
+                    <progressbar class="progress-striped active" max="200" value="200" type="info"><i>Loading the
+                        profile of {{tab.gamertag}}</i></progressbar>
+                </div>
+
+                <!-- This is the controller for player: {{dummyData.Player.Gamertag | json}} -->
+                <profile-view profile="tab.profile"></profile-view>
+
+            </div>
+
+        </tab>
+    </tabset>
+
 </div>

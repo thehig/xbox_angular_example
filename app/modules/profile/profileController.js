@@ -6,9 +6,10 @@ var xboxAppStuff = {}
 xboxAppStuff.controllers = {}
 xboxAppStuff.directives = {}
 
-xboxAppStuff.controllers.profileCtrl = function($scope)
+xboxAppStuff.controllers.profileCtrl = function($scope, $http)
 {
 
+    /*
     $scope.dummyData =
     {
         "Success": true,
@@ -135,18 +136,98 @@ xboxAppStuff.controllers.profileCtrl = function($scope)
             }
         }
     }
+    */
+
+    $scope.tabs=[];
+    console.log("Init");
 
 
-    $scope.getDummyProfile = function()
-    {
-        return $scope.dummyData;
+    $scope.addProfile = function(gamertag){
+        console.log("addProfile: " + gamertag)
+        $scope.gamertag= "";
+
+        $scope.removeTab = function (index) {
+            $scope.tabs.splice(index, 1);
+        };
+
+        $scope.tabs.push({"gamertag": gamertag, "pulling":true, "profile":{} });
+
+        $http.get('https://xboxapi.com/profile/'+gamertag).success(function(xboxAPIData)
+        {
+
+            console.log("Result: ")
+            console.log(xboxAPIData)
+            tempProfile = _.find($scope.tabs, function(currentTab)
+            {
+                return currentTab.gamertag == gamertag;
+            });
+
+
+            //TODO: find better way of doing this
+            tempProfile.profile = xboxAPIData;
+            tempProfile.pulling = false;
+        })
+            .error(function(data)
+            {
+                //_.findWhere($scope.tabs, {"gamertag": gamertag}).push("success": false, "message":"The call returned sucessfully", "pulling": false});
+            });
+
+
     }
+
+    $scope.resetForm = function()
+    {
+        $scope.gamertag = "";
+    }
+
+    $scope.pushProfile = function(profile)
+    {
+        $scope.tabs.push(profile);
+    }
+
+    $scope.getTabs = function()
+    {
+        return $scope.tabs;
+    }
+
+    return $scope.profileCtrl = this;
 }
+
+
+
+/*function(gamertag)
+{
+    $scope.gamertag= "";
+
+    $scope.removeTab = function (index) {
+        $scope.tabs.splice(index, 1);
+    };
+
+    $scope.tabs.push({"gamertag": gamertag, "pulling":true, "profile":{} });
+
+    $http.get('https://xboxapi.com/profile/'+gamertag).success(function(xboxAPIData)
+    {
+
+        tempProfile = _.find($scope.tabs, function(currentTab)
+        {
+            return currentTab.gamertag == gamertag;
+        });
+
+
+        //TODO: find better way of doing this
+        tempProfile.profile = xboxAPIData;
+        tempProfile.pulling = false;
+    })
+        .error(function(data)
+        {
+            //_.findWhere($scope.tabs, {"gamertag": gamertag}).push("success": false, "message":"The call returned sucessfully", "pulling": false});
+        });
+}*/
 
 xboxAppStuff.directives.profileView = function()
 {
     return {
-        restrict: 'EA',
+        restrict: 'E',
         templateUrl: 'app/modules/profile/views/profile_view.html',
         scope:{
             profile:"="
@@ -157,7 +238,7 @@ xboxAppStuff.directives.profileView = function()
 xboxAppStuff.directives.playerView = function()
 {
     return {
-        restrict: 'EA',
+        restrict: 'E',
         templateUrl: 'app/modules/profile/views/player_view.html',
         scope:{
             player:"="
@@ -168,7 +249,7 @@ xboxAppStuff.directives.playerView = function()
 xboxAppStuff.directives.gameView = function()
 {
     return {
-        restrict: 'EA',
+        restrict: 'E',
         templateUrl: 'app/modules/profile/views/game_view.html',
         scope:{
             game:"="
