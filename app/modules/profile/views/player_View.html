@@ -1,12 +1,37 @@
-<div class="container">
-    <table>
+<!-- Data in object named "player" -->
+
+<div class="container, border">
+    <table class="tableborder">
         <tr>
-            <td><img src={{player.Avatar.Gamertile.Large}} /></td>
-            <td><p>
-                This is a profile for {{player.Gamertag}}<br/>
-                Gamer score: {{player.Gamerscore}}<br/>
-                Status: {{player.Status.Online_Status}}
-            </p></td>
+            <td><img src={{player.Avatar.Gamertile.Large}} class="roundcorners" /></td>
+            <td>
+                <table class="tableborder">
+                    <tr>
+                        <td>
+                            Gamer Tag: {{player.Gamertag}}
+                        </td>
+                        <td>
+                            Gamer Score: {{player.Gamerscore}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Gamer score: {{player.Gamerscore}}
+                        </td>
+                        <td>
+                            Reputation: {{player.Reputation}}
+                        </td>
+                    </tr>
+                <tr>
+                    <td>
+                        Motto: {{player.Motto}}
+                    </td>
+                    <td>
+                        Status: {{player.Status.Online_Status}}
+                    </td>
+                </tr>
+                </table>
+           </td>
         </tr>
     </table>
 </div>
