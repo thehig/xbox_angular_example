@@ -11,3 +11,19 @@ angular.module('profileApp')
             }
 		};
 	}])
+
+angular.module('profileApp')
+    .directive('playerView', [function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/modules/profile/views/player.html'
+        };
+    }])
+
+angular.module('profileApp')
+    .directive('gameView', [function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'app/modules/profile/views/game.html'
+        };
+    }])

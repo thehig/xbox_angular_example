@@ -1,38 +1,4 @@
-<div class="container">
-    <h2 ng-click="">Enter a gamertag to see their latest game</h2>
-    <i class="icon-search"></i>
-
-    <form name="gamerTagForm" class="form-horizontal form-inline" ng-submit="addProfile(gamertag)" role="form">
-
-        <input type="text" placeholder="Enter a Gamertag" ng-model="gamertag" required class="form-control">
-
-    </form>
-
-
-    <br/>
-    <tabset justified="true">
-        <tab ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled">
-            <tab-heading>
-                <i ng-class="{'glyphicon glyphicon-transfer': tab.pulling}"></i>
-                {{tab.gamertag}}
-                <a ng-click="removeTab($index)" href=''><i class="glyphicon glyphicon-remove-circle"></i></a>
-            </tab-heading>
-            <br/>
-
-            <div class="row">
-
-                <div class="col-sx-6 .col-md-offset-3" ng-show="tab.pulling">
-                    <progressbar class="progress-striped active" max="200" value="200" type="info"><i>Loading the
-                        profile of {{tab.gamertag}}</i></progressbar>
-                </div>
-
-                <gamer-profile gamertag="tab.gamertag" pulling="tab.pulling"></gamer-profile>
-
-
-            </div>
-
-        </tab>
-    </tabset>
-
-    <br/>
+<div class="panel-title">
+    This is the controller
 </div>
+<gamer-profile></gamer-profile>
