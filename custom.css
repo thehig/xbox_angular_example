@@ -16,8 +16,7 @@ p {
     border-color: #C0C0C0;
 }
 .centrecontent{
-    margin-left:auto;
-    margin-right:auto;
+    margin: 0 auto;
     text-align:center;
 }
 .roundcorners{
@@ -30,9 +29,10 @@ p {
 }
 
 .paddingsides{
-    padding-left: 30px;
-    padding-right: 30px;
-}
+     padding-left: 30px;
+     padding-right: 30px;
+ }
+
 .tableborder{
 
     border-collapse:separate;
