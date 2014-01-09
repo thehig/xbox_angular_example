@@ -15,7 +15,11 @@ p {
     padding: 10px;
     border-color: #C0C0C0;
 }
-
+.centrecontent{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
 .roundcorners{
     border: 0px none;
     border-radius:5px;
