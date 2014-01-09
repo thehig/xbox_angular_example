@@ -16,7 +16,9 @@ p {
     border-color: #C0C0C0;
 }
 .centrecontent{
-    margin: 0 auto;
+     margin: 0 auto;
+ }
+.centretext{
     text-align:center;
 }
 .roundcorners{
@@ -34,11 +36,20 @@ p {
  }
 
 .tableborder{
-
     border-collapse:separate;
     border-spacing: 10px;
 }
 
 .backgroundcolour{
     background-color: #808080;
+}
+.progessMaxWidth{
+    width: 60%;
+
+}
+
+.centreProgress{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10px;
 }
