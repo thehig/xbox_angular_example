@@ -8,8 +8,8 @@
 
     </form>
 
-    <tabset justified="true" class="paddingtop, centrecontent">
-        <tab ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled">
+    <tabset justified="true">
+        <tab ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled"  class="paddingtop">
             <tab-heading>
                 <i ng-class="{'glyphicon glyphicon-transfer': tab.pulling}"></i>
                 {{tab.gamertag}}
@@ -20,16 +20,13 @@
 
 
             <div class="row">
-
-                    <div class="centreProgress" ng-show="tab.pulling">
+                    <div class="centreProgress, border" ng-show="tab.pulling">
                         <progressbar class="progress-striped active" role="progressbar" max="150" value="150" type="info"><i>Loading the
                             profile of {{tab.gamertag}}</i>
                         </progressbar>
                     </div>
-
-
                 <!-- This is the controller for player: {{dummyData.Player.Gamertag | json}} -->
-                <profile-view profile="tab.profile"></profile-view>
+                <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
             </div>
 
         </tab>
