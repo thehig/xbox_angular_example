@@ -9,7 +9,6 @@ p {
 
 .border{
     border:1px solid;
-    padding: 10px;
     border-color: #C0C0C0;
 }
 .centrecontent{
@@ -25,6 +24,11 @@ p {
 
 .paddingtop{
     padding-top: 20px;
+}
+.progressPadding{
+    padding-top: 100px;
+    padding-bottom: 100px;
+
 }
 .paddingbottom{
     padding-bottom: 10px;

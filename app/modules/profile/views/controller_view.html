@@ -20,15 +20,18 @@
 
 
             <div class="row">
-                    <div class="centreProgress, border" ng-show="tab.pulling">
-                        <progressbar class="progress-striped active" role="progressbar" max="150" value="150" type="info"><i>Loading the
-                            profile of {{tab.gamertag}}</i>
-                        </progressbar>
-                    </div>
+
                 <!-- This is the controller for player: {{dummyData.Player.Gamertag | json}} -->
                 <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
             </div>
 
+            <div class="progressPadding" ng-hide="collapse = !tab.pulling">
+                <div class="centreProgress" ng-show="tab.pulling" >
+                    <progressbar class="progress-striped active" role="progressbar" max="150" value="150" type="info"><i>Loading the
+                        profile of {{tab.gamertag}}</i>
+                    </progressbar>
+                </div>
+            </div>
         </tab>
     </tabset>
 
