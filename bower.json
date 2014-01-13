@@ -22,7 +22,7 @@
     "jquery": "~2.0.3",
     "underscore": null,
     "requirejs": null,
-    "angular-bootstrap": null,
+    "bootstrap": null,
     "angular": null,
     "angular-route": null
   }
