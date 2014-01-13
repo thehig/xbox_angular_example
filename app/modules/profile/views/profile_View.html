@@ -4,12 +4,14 @@
 
     <player-view player="profile.Player"></player-view>
 
-    <div class="border, gameheight">
-        <table class="list-inline, centrecontent" >
-            <td ng-repeat="game in profile.RecentGames" >
-                <game-view game="game"></game-view>
-            </td>
-        </table>
+    <div class="border">
+        <div class="gameDivHeight">
+            <table class="list-inline, centrecontent" >
+                <td ng-repeat="game in profile.RecentGames" >
+                    <game-view game="game"></game-view>
+                </td>
+            </table>
+        </div>
     </div>
 
     <div class="footerProfileView">

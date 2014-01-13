@@ -79,7 +79,7 @@ p {
 
 .loadingBarContainer{
     width: 100%;
-    height: 25em;
+    height: 25.19em;
     border-top:none;
     border-left:1px solid;
     border-right:1px solid;
@@ -88,9 +88,16 @@ p {
     border-radius: 0 0 5px 5px;
 }
 
-
 .container1 {
     margin-right: auto;
     margin-left: auto;
     position: relative;
+}
+
+.gameDivHeight{
+    height:13em;
+}
+
+.profileDivHeight{
+    height: 9em;
 }

@@ -1,37 +1,39 @@
 <!-- Data in object named "player" -->
 
-<div class="borderProfile, playerHeight">
-    <table class="tableborder, centrecontent">
-        <tr>
-            <td><img src={{player.Avatar.Gamertile.Large}} class="roundcorners" /></td>
-            <td>
-                <table class="tableborder">
+<div class="borderProfile">
+    <div class="profileDivHeight">
+        <table class="tableborder, centrecontent">
+            <tr>
+                <td><img src={{player.Avatar.Gamertile.Large}} class="roundcorners" /></td>
+                <td>
+                    <table class="tableborder">
+                        <tr>
+                            <td>
+                                Gamer Tag: {{player.Gamertag}}
+                            </td>
+                            <td>
+                                Gamer Score: {{player.Gamerscore}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Online: {{player.Status.Online}}
+                            </td>
+                            <td>
+                                Reputation: {{player.Reputation}}
+                            </td>
+                        </tr>
                     <tr>
                         <td>
-                            Gamer Tag: {{player.Gamertag}}
+                            Motto: {{player.Motto}}
                         </td>
                         <td>
-                            Gamer Score: {{player.Gamerscore}}
+                            Status: {{player.Status.Online_Status}}
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Online: {{player.Status.Online}}
-                        </td>
-                        <td>
-                            Reputation: {{player.Reputation}}
-                        </td>
-                    </tr>
-                <tr>
-                    <td>
-                        Motto: {{player.Motto}}
-                    </td>
-                    <td>
-                        Status: {{player.Status.Online_Status}}
-                    </td>
-                </tr>
-                </table>
-           </td>
-        </tr>
-    </table>
+                    </table>
+               </td>
+            </tr>
+        </table>
+    </div>
 </div>
