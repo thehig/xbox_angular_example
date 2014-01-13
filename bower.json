@@ -23,6 +23,7 @@
     "underscore": null,
     "requirejs": null,
     "bootstrap": null,
+    "bootstrap": null,
     "angular": null,
     "angular-route": null
   }

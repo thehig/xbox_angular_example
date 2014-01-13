@@ -88,12 +88,9 @@ p {
     border-radius: 0 0 5px 5px;
 }
 
-.gameheight{
-    height: 13em;
-    width: 100%;
-}
 
-.playerHeight{
-    height: 9em;
-    width: 100%
+.container1 {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
 }
