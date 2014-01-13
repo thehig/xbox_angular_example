@@ -38,6 +38,7 @@ xboxAppStuff.controllers.profileCtrl = function($scope, $http)
             //TODO: find better way of doing this
             tempProfile.profile = xboxAPIData;
             tempProfile.pulling = false;
+            console.log(Date.now());
         }
         ).error(function(data)
         {
