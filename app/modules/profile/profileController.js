@@ -1,3 +1,4 @@
+
 // app/modules/profile/controllers.js
 var app = angular.module('profileApp', []);
 

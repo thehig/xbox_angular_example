@@ -57,7 +57,7 @@ p {
      padding-right: 30px;
  }
 
-.tableborder{
+.tableBorder{
     border-collapse:separate;
     border-spacing: 10px;
 }
@@ -97,9 +97,17 @@ p {
 }
 
 .gameDivHeight{
-    height:13em;
+    height:14em;
 }
 
 .profileDivHeight{
-    height: 9em;
+    height: 8em;
+}
+
+/******* New layout css *****/
+
+.headerSearch{
+    float: right;
+    padding-top: 20px;
+    display: inline;
 }
