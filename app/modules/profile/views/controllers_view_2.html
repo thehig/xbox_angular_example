@@ -1,0 +1,50 @@
+<div class="container">
+    <div class=" navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="container">
+            <div class=" col-md-4 verticalAllign">
+                <a class="navbar-brand"href="#">Angluar Example</a>
+            </div>
+
+            <div class="col-md-4 col-md-offset-4 navbar-brand" name="gamerTagForm" ng-submit="addProfile(gamertag)" role="form">
+                <input type="text" placeholder="Search a Gamertag..." ng-model="gamertag" required class="form-control" >
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="row, paddingtop">
+
+        <h2 ng-click="">Enter a gamertag to view a profile</h2>
+        <i class="icon-search"></i>
+
+        <form name="gamerTagForm" class="form-horizontal form-inline" ng-submit="addProfile(gamertag)" role="form">
+
+            <input type="text" placeholder="Enter a Gamertag" ng-model="gamertag" required class="form-control">
+
+        </form>
+
+        <!-- Navigation Buttons -->
+        <div ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked" id="myTabs">
+                    <li>
+                        <a ng-click="removeTab($index)" href=''>
+                            <i ng-class="{'glyphicon glyphicon-transfer': tab.pulling}"></i>
+                            {{tab.gamertag}}
+                            <i class="glyphicon glyphicon-remove-circle"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Content-->
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> <!-- /container -->
