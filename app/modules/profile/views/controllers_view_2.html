@@ -24,26 +24,38 @@
         </form>
 
         <!-- Navigation Buttons -->
-        <div ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled">
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked" id="myTabs">
-                    <li>
-                        <a ng-click="removeTab($index)" href=''>
+        <div >
+            <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked" id="myTabs" ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled">
+                    <li ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled"  class="paddingtop">
+
                             <i ng-class="{'glyphicon glyphicon-transfer': tab.pulling}"></i>
                             {{tab.gamertag}}
+                        <a ng-click="removeTab($index)" href=''>
                             <i class="glyphicon glyphicon-remove-circle"></i>
                         </a>
                     </li>
-
                 </ul>
-            </div>
 
-            <!-- Content-->
-            <div class="col-md-9">
-                <div class="tab-content">
+
+            </div>
+            <div class="col-md-10">
+                <div class="tab-content" ng-hide="collapse = tab.pulling">
                     <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
                 </div>
             </div>
+
+            <div class="loadingBarContainer" ng-hide="collapse = !tab.pulling">
+                <div class="progressPadding" >
+                    <div class="centreProgress" ng-show="tab.pulling" >
+                        <progressbar class="progress progress-striped active" role="progressbar" max="150" value="150" type="info"><i>Loading the
+                            profile of {{tab.gamertag}}</i>
+                        </progressbar>
+                    </div>
+                </div>
+            </div>
+            <!-- Content-->
+
         </div>
 
     </div>

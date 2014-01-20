@@ -1,7 +1,7 @@
 <!-- Data in object named "player" -->
 
 <div class="borderProfile">
-    <div class="profileDivHeight">
+    <div class="col-md-5">
         <table class="tableborder, centrecontent">
             <tr>
                 <td><img src={{player.Avatar.Gamertile.Large}} class="roundcorners, boxShadow" /></td>
@@ -11,6 +11,8 @@
                             <td>
                                 Gamer Tag: {{player.Gamertag}}
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 Gamer Score: {{player.Gamerscore}}
                             </td>
@@ -19,6 +21,8 @@
                             <td>
                                 Online: {{player.Status.Online}}
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 Reputation: {{player.Reputation}}
                             </td>
@@ -27,10 +31,12 @@
                         <td>
                             Motto: {{player.Motto}}
                         </td>
-                        <td>
-                            Status: {{player.Status.Online_Status}}
-                        </td>
                     </tr>
+                        <tr>
+                            <td>
+                                Status: {{player.Status.Online_Status}}
+                            </td>
+                        </tr>
                     </table>
                </td>
             </tr>
