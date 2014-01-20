@@ -233,10 +233,3 @@ xboxAppStuff.directives.gameView = function()
 
 app.directive(xboxAppStuff.directives);
 app.controller(xboxAppStuff.controllers);
-
-<!-- Enable the tabs -->
-
-$('#myTabs a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-    });
