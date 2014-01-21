@@ -53,8 +53,8 @@
             <div>
                 <div class="col-md-10" >
                     <div class="tab-content">
-                        <div id="tab1" class="tab-pane">
-                            <p>This is the text of tab 1.</p>
+                        <div ng-repeat="tab in getTabs()" id="{{tab.gamertag}}" class="tab-pane">
+                            <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
                         </div>
                     </div>
                     <!--
