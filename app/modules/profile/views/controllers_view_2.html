@@ -30,22 +30,10 @@
                     <li ng-repeat="tab in getTabs()">
                         <a data-target="#{{tab.gamertag}}" data-toggle="tab">
                             {{tab.gamertag}}
+                                <i ng-click="removeTab($index)" href='' class="glyphicon glyphicon-remove-circle"></i>
                         </a>
+
                     </li>
-
-                    <!--
-                    <li ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled" class="paddingtop">
-
-                        <a href="#{{tab.gamertag}}" ng-click="#{{tab.gamertag}}" data-toggle="tab">
-                            <i ng-class="{'glyphicon glyphicon-transfer': tab.pulling}"></i>
-                            {{tab.gamertag}}
-                        </a>
-
-                        <a ng-click="removeTab($index)" href=''>
-                            <i class="glyphicon glyphicon-remove-circle"></i>
-                        </a>
-                    </li>
-                    -->
                 </ul>
             </div>
 
@@ -53,29 +41,25 @@
             <div>
                 <div class="col-md-10" >
                     <div class="tab-content">
-                        <div ng-repeat="tab in getTabs()" id="{{tab.gamertag}}" class="tab-pane">
-                            <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
-                        </div>
-                    </div>
-                    <!--
-                    <div  ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled" class="tab-content" ng-hide="collapse = tab.pulling" ng_show="{{tab.gamertag}}">
-                        <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
-                    </div>
-                    -->
-                </div>
+                        <div ng-repeat="tab in getTabs()" active="tab.active" disabled="tab.disabled" id="{{tab.gamertag}}" class="tab-pane">
 
-                <!-- Loading bar
-                <div ng-repeat="tab in getTabs()" class="loadingBarContainer" ng-hide="collapse = !tab.pulling">
-                    <div class="progressPadding" >
-                        <div class="centreProgress" ng-show="tab.pulling" >
-                            <progressbar class="progress progress-striped active" role="progressbar" max="150" value="150" type="info">
-                                <i>Loading the profile of {{tab.gamertag}}</i>
-                            </progressbar>
+                            <!--tab content-->
+                            <profile-view profile="tab.profile" ng-hide="tab.pulling"></profile-view>
+
+                            <!--Loading bar-->
+                            <div ng-hide="collapse = !tab.pulling">
+                                <div class="progressPadding" >
+                                    <div class="centreProgress" ng-show="tab.pulling" >
+                                        <progressbar class="progress progress-striped active" role="progressbar" max="150" value="150" type="info">
+                                            <i>Loading the profile of {{tab.gamertag}}</i>
+                                        </progressbar>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                 -->
-                <!-- Content-->
             </div>
         </div>
 
