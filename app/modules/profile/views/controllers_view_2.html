@@ -32,7 +32,6 @@
                             {{tab.gamertag}}
                                 <i ng-click="removeTab($index)" href='' class="glyphicon glyphicon-remove-circle"></i>
                         </a>
-
                     </li>
                 </ul>
             </div>
@@ -48,11 +47,13 @@
 
                             <!--Loading bar-->
                             <div ng-hide="collapse = !tab.pulling">
-                                <div class="progressPadding" >
-                                    <div class="centreProgress" ng-show="tab.pulling" >
-                                        <progressbar class="progress progress-striped active" role="progressbar" max="150" value="150" type="info">
-                                            <i>Loading the profile of {{tab.gamertag}}</i>
-                                        </progressbar>
+                                <div class="loadingBarContainer">
+                                    <div class="progressPadding" >
+                                        <div class="centreProgress" ng-show="tab.pulling" >
+                                            <progressbar class="progress progress-striped active" role="progressbar" max="150" value="150" type="info">
+                                                <i>Loading the profile of {{tab.gamertag}}</i>
+                                            </progressbar>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
